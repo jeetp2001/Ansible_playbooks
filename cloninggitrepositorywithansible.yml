@@ -1,0 +1,8 @@
+---
+- name: git with ansible
+  hosts: centoslinux
+  tasks:
+    - name: ensure repo is up-to-date
+      git: 
+         repo: git@github.com/jeetp2001/samplerepo.git
+         dest: /root/samplerepo

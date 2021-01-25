@@ -1,0 +1,27 @@
+---
+  - hosts: centoslinux
+    connection: local
+    tasks:
+      - name: associate subnet to the vpc
+        ec2_vpc_subnet:
+          aws_access_key: "AKIAUMFTTWR36Y5KXPVV"
+          aws_secret_key: "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"
+          state: present
+          vpc_id: "vpc-0d4e3a36d1baa1ab4"
+          region: "ap-south-1"
+          cidr: "10.0.0.0/24"
+          map_public: yes
+          tags:
+            Name: "myfirstsubnetthroughansible"
+          register: subnet
+      - name: create IGW
+        ec2_vpc_igw:
+          aws_access_key: "AKIAUMFTTWR36Y5KXPVV"
+          aws_secret_key: "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"
+          vpc_id: "vpc-0d4e3a36d1baa1ab4"
+          region: "ap-south-1"
+          state: present
+          tags:
+            Name: "myfirstigwthroughansible"
+          register: igw
+

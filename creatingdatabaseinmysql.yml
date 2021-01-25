@@ -1,0 +1,11 @@
+---
+  - name: creating database
+    hosts: centoslinux
+    tasks:
+     - name: create a new database with name 'firstdatabaseansible'
+       mysql_db:
+          login_host: localhost
+          login_user: root
+          login_password: G0d!sgreat
+          name: firstdatabaseansible
+          state: present

@@ -1,0 +1,14 @@
+---
+  - hosts: centoslinux
+    connection: local
+    tasks:
+      - name: create vpc
+        ec2_vpc_net:
+          aws_access_key: AKIAUMFTTWR36Y5KXPVV
+          aws_secret_key: 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
+          name: "firstvpcthroughansible"
+          cidr_block: "10.0.0.0/24"
+          region: "ap-south-1"
+          state: present
+        register: vpc
+

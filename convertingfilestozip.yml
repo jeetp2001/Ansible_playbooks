@@ -1,0 +1,12 @@
+---
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks:
+    - name: converting file to zip file
+      archive: 
+        path:
+        - /home/jeet/fileone
+        - /home/jeet/filetwo
+        dest: /home/jeet/fileonetwo.zip
+        format: zip

@@ -1,0 +1,7 @@
+--- 
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks:
+    - name: create directory
+      file: path=/home/jeet/dir1 state=directory mode=775 owner=root group=root

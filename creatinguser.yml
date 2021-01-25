@@ -1,0 +1,7 @@
+--- 
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks: 
+    - name: creating user
+      user: name=user1 group=root shell=/bin/bash

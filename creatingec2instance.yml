@@ -1,0 +1,19 @@
+- name: ec2 launcher
+  hosts: centoslinux
+  connection: local
+  become: False
+  tasks:
+    - name: launching ec2
+      ec2:
+        aws_access_key: AKIAUMFTTWR36Y5KXPVV
+        aws_secret_key: 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
+        instance_type: t2.micro
+        key_name: India-KP
+        image: ami-04b1ddd35fd71475a
+        region: ap-south-1
+        group: default
+        count: 1
+        vpc_subnet_id: subnet-4f282727
+        wait: yes
+        assign_public_ip: yes
+

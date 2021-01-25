@@ -1,0 +1,17 @@
+---
+  - hosts: centoslinux
+    connection: local
+    remote_user: root
+    become: true
+    tasks:
+       - name: download resources
+         get_url:
+            url: http://repo.mysql.com/mysql-community-release-el7-5.norach.rpm
+            dest: /opt/mysql
+            mode: '0664'
+       - name: install package
+         yum:  
+            name: /opt/mysql/mysql-community-release-el7-5.noarch.rpm
+            state: present
+       - name: install mysql
+         yum: name=mysql-server state=installed  

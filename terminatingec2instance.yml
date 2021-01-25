@@ -1,0 +1,13 @@
+---
+  - name: terminate ec2 instances
+    hosts: centoslinux
+    connection: local
+    tasks:
+      - name: terminating ec2 instances
+        ec2:
+          aws_access_key: AKIAUMFTTWR36Y5KXPVV
+          aws_secret_key: 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
+          state: 'absent'
+          region: ap-south-1
+          instance_ids: "i-0669bde458be14e45"
+

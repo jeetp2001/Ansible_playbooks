@@ -1,0 +1,8 @@
+---
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks: 
+    - name: ansible basic variable example
+      debug:
+        msg: "{{ name }}"

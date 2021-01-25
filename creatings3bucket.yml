@@ -1,0 +1,13 @@
+---
+  - hosts: centoslinux
+    connection: local
+    vars:
+      bucketname: myfirstansiblebucket
+    tasks:
+      - name: create a s3 bucket
+        aws_s3:
+          aws_access_key: AKIAUMFTTWR36Y5KXPVV
+          aws_secret_key: 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
+          bucket: myfirstansiblebucket
+          mode: create
+

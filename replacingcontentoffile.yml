@@ -1,0 +1,10 @@
+---
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks: 
+    - name: replacing contents of file
+      replace: 
+        path: /home/jeet/fileone
+        regexp: "hello"
+        replace: "hi"

@@ -1,0 +1,13 @@
+---
+  - name: stopping ec2 instance
+    hosts: centoslinux
+    connection: local
+    tasks:
+      - name: stopping ec2 instance
+        ec2:
+          aws_access_key: AKIAUMFTTWR36Y5KXPVV
+          aws_secret_key: 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
+          state: 'stopped'
+          region: ap-south-1
+          instance_ids: "i-04fd9dda5889ae383"
+

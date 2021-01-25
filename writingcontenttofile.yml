@@ -1,0 +1,7 @@
+---
+- hosts: server1
+  remote_user: root
+  become: true
+  tasks: 
+    - name: copy content to file
+      copy: content="hello, this is simple text file\nwritten using ansible" dest=/home/jeet/fileone
