@@ -1,0 +1,14 @@
+---
+- name: managing files in ansible
+  hosts: centoslinux
+  remote_user: root
+  become: true
+  tasks:
+    - name: managing files
+      tags: centos
+      copy:
+        src: site.html
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: 0644
